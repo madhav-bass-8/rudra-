@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rudra Forum - Reliable Unison of Defence Researchers & Advisors</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+
+        /* Saffron, White, Green Gradient for accents */
+        .indian-gradient-text {
+            background: linear-gradient(90deg, #FF9933, #FFFFFF, #138808);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1621947082239-2a95945435a6?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* NEW: Glassmorphism container for hero text */
+        .hero-text-container {
+            background: rgba(17, 24, 39, 0.4); /* bg-gray-900 with opacity */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            padding: 2rem 3rem;
+            border-radius: 1rem; /* rounded-xl */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            display: inline-block;
+        }
+
+        /* Modal styles */
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+
+        /* Chatbot styles */
+        .chatbot-window {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* AI Feature Button Style */
+        .ai-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background-color: #7c3aed; /* violet-600 */
+            color: white;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .ai-button:hover {
+            background-color: #6d28d9; /* violet-700 */
+        }
+        .ai-button .sparkle {
+            margin-right: 0.5rem;
+            animation: sparkle-animation 1.5s infinite;
+        }
+
+        @keyframes sparkle-animation {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="https://placehold.co/150x50/000000/FFFFFF?text=RUDRA&font=sans-serif" alt="Rudra Forum Logo" class="h-10">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-slate-600 hover:text-orange-500 transition duration-300">Home</a>
+                <a href="#about" class="text-slate-600 hover:text-orange-500 transition duration-300">About</a>
+                <a href="#experts" class="text-slate-600 hover:text-orange-500 transition duration-300">Experts</a>
+                <a href="#mission" class="text-slate-600 hover:text-orange-500 transition duration-300">Mission</a>
+                <a href="#contact" class="text-slate-600 hover:text-orange-500 transition duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-feather="menu" class="text-slate-800"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="#home" class="block py-2 text-slate-600 hover:text-orange-500">Home</a>
+            <a href="#about" class="block py-2 text-slate-600 hover:text-orange-500">About</a>
+            <a href="#experts" class="block py-2 text-slate-600 hover:text-orange-500">Experts</a>
+            <a href="#mission" class="block py-2 text-slate-600 hover:text-orange-500">Mission</a>
+            <a href="#contact" class="block py-2 text-slate-600 hover:text-orange-500">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section h-screen flex items-center justify-center text-white text-center">
+            <div class="container mx-auto px-6">
+                <!-- New container for the text background -->
+                <div class="hero-text-container">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down">
+                        RUDRA FORUM
+                    </h1>
+                    <p class="text-lg md:text-2xl font-light animate-fade-in-up">
+                        Reliable Unison of Defence Researchers & Advisors
+                    </p>
+                </div>
+                <a href="#about" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 mt-10 inline-block">
+                    Discover Our Mission
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Forging the Future of India's Defence</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
+                <p class="max-w-3xl mx-auto text-slate-600 text-lg">
+                    Rudra Forum is a non-profit NGO and a Section 8 registered corporation (application pending), bringing together a synergy of distinguished experts from diverse fields. Our collective goal is to innovate, collaborate, and achieve excellence in defence technology and related sectors, fostering Atmanirbhar Bharat.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Commitment to National Security</h2>
+                    <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
+                </div>
+                <div class="flex flex-wrap md:flex-nowrap items-center gap-12">
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-3 text-orange-600">Our Vision</h3>
+                        <p class="text-slate-600 mb-8">To be a pivotal force in India's journey towards self-reliance in defence, creating a robust and indigenous innovation ecosystem.</p>
+                        <h3 class="text-2xl font-bold mb-3 text-green-700">Our Mission</h3>
+                        <p class="text-slate-600" id="mission-text">Through our non-profit NGO, RUDRA, we are dedicated to empowering India's defence innovation ecosystem. We aim to deliver cutting-edge solutions by fostering a collaborative environment for innovation in defence technology and allied fields.</p>
+                        <div class="mt-8">
+                            <button id="analyze-mission-btn" class="ai-button">
+                                <span class="sparkle">✨</span> Analyze Mission with AI
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                         <div id="mission-analysis-container" class="bg-white p-6 rounded-lg shadow-lg hidden">
+                            <h4 class="text-xl font-bold mb-3 text-violet-700">AI-Powered Mission Analysis</h4>
+                            <div id="mission-analysis-content" class="prose prose-sm max-w-none"></div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1581242199923-7331c156aa23?q=80&w=1932&auto=format&fit=crop" alt="Indian Flag" class="rounded-lg shadow-2xl mt-8 md:mt-0" id="mission-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experts Section -->
+        <section id="experts" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Meet Our Board of Eminent Experts</h2>
+                    <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
+                </div>
+                <div id="experts-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Expert cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect With Us Section -->
+        <section id="contact" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Connect With Us</h2>
+                    <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
+                    <p class="max-w-2xl mx-auto text-slate-600 mt-4">
+                        We are eager to collaborate with partners who share our vision. Please fill out the form below to get in touch.
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                    <form action="#" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
+                                <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500">
+                            </div>
+                            <div>
+                                <label for="company-name" class="block text-sm font-medium text-slate-700">Company Name</label>
+                                <input type="text" name="company-name" id="company-name" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500">
+                            </div>
+                            <div>
+                                <label for="country" class="block text-sm font-medium text-slate-700">Country</label>
+                                <input type="text" name="country" id="country" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500">
+                            </div>
+                             <div>
+                                <label for="phone" class="block text-sm font-medium text-slate-700">Contact Number</label>
+                                <input type="tel" name="phone" id="phone" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500">
+                            </div>
+                             <div>
+                                <label for="email" class="block text-sm font-medium text-slate-700">Email Address</label>
+                                <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500">
+                            </div>
+                            <div>
+                                <label for="company-website" class="block text-sm font-medium text-slate-700">Company Website</label>
+                                <input type="url" name="company-website" id="company-website" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="message" class="block text-sm font-medium text-slate-700">Why do you want to connect?</label>
+                                <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500"></textarea>
+                            </div>
+                        </div>
+                        <div class="text-right mt-6">
+                            <button type="submit" class="inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Original Contact Section -->
+        <section class="py-20 bg-slate-900 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Direct Contact</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
+                <p class="max-w-2xl mx-auto text-slate-300 mb-4">
+                    For immediate inquiries, you can also reach us directly via phone.
+                </p>
+                <div class="text-lg font-semibold text-orange-400">
+                    <i data-feather="phone" class="inline-block mr-2"></i>Phone: +91 9810172353
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-700 py-6">
+        <div class="container mx-auto px-6 text-center text-slate-400">
+            <p>&copy; <span id="year"></span> Rudra Forum. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Expert Profile Modal -->
+    <div id="expert-modal" class="modal fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 hidden opacity-0">
+        <div id="modal-content" class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto p-8 relative transform scale-95">
+            <button id="close-modal" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800">
+                <i data-feather="x" class="w-8 h-8"></i>
+            </button>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/3 text-center">
+                    <img id="modal-img" src="" alt="Expert" class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg border-4 border-orange-500">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 id="modal-name" class="text-3xl font-bold text-slate-800 mb-2"></h3>
+                    <p id="modal-title" class="text-lg font-semibold text-orange-600 mb-4"></p>
+                    <div class="prose text-slate-600">
+                        <p id="modal-profile"></p>
+                    </div>
+                     <div class="mt-6">
+                        <button id="expert-insights-btn" class="ai-button">
+                             <span class="sparkle">✨</span> Generate AI Insights
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="expert-insights-container" class="mt-6 border-t pt-4 hidden">
+                <h4 class="text-xl font-bold mb-3 text-violet-700">AI-Generated Strategic Insights</h4>
+                <div id="expert-insights-content" class="prose prose-sm max-w-none"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Chatbot -->
+    <div id="chatbot-container" class="fixed bottom-5 right-5 z-40">
+        <button id="chatbot-toggle" class="bg-orange-500 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center transform hover:scale-110 transition-transform">
+             <i data-feather="message-square" class="w-8 h-8"></i>
+        </button>
+        <div id="chatbot-window" class="chatbot-window absolute bottom-20 right-0 w-80 h-96 bg-white rounded-lg shadow-2xl flex flex-col hidden opacity-0 transform translate-y-4">
+            <div class="bg-slate-800 text-white p-4 rounded-t-lg flex justify-between items-center">
+                <h3 class="font-bold">Rudra AI Assistant</h3>
+                 <button id="close-chatbot" class="text-white hover:text-slate-300">
+                    <i data-feather="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto">
+                <!-- Chat messages will appear here -->
+                 <div class="flex justify-start mb-2">
+                    <div class="bg-slate-200 text-slate-800 rounded-lg p-2 max-w-xs">
+                        Welcome to Rudra Forum! Ask me about Indian defence or our organization.
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 border-t border-slate-200">
+                <div class="flex">
+                    <input type="text" id="chat-input" placeholder="Type your question..." class="flex-1 p-2 border border-slate-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    <button id="chat-send" class="bg-orange-500 text-white px-4 rounded-r-md hover:bg-orange-600">
+                        <i data-feather="send" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Feather Icons
+            feather.replace();
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Experts Data
+            const experts = [
+                { name: 'Mr Ravi Kant', title: 'Ex DG & Chairman(IOF), Ministry of Defence', img: 'https://placehold.co/400x400/EFEFEF/333333?text=RK', profile: 'A visionary leader with extensive experience in defence manufacturing and policy. Mr. Kant has played a crucial role in modernizing India\'s ordnance factories, enhancing production capabilities and quality standards to support the armed forces.' },
+                { name: 'Mr Hari Mohan', title: 'Ex CMD, Munitions India Limited, Ministry of Defence', img: 'https://placehold.co/400x400/EFEFEF/333333?text=HM', profile: 'An expert in ammunition and explosives technology, Mr. Mohan has led one of India\'s largest defence PSUs. His focus has been on achieving self-reliance in ammunition and expanding India\'s export footprint in the defence sector.' },
+                { name: 'Mr Subramanium Chitamber lyer, INAS', title: 'DG-Naval Armament(Rtd.)', img: 'https://placehold.co/400x400/EFEFEF/333333?text=SCI', profile: 'With a distinguished career in the Indian Navy, Mr. Iyer is a specialist in naval armament systems. He has overseen the induction and maintenance of advanced weaponry, contributing significantly to the Navy\'s combat readiness.' },
+                { name: 'Air Marshal AK Arora, AVSM VSM (Retd).', title: 'Ex Air Officer in-charge Maintenance IAF', img: 'https://placehold.co/400x400/EFEFEF/333333?text=AKA', profile: 'A decorated officer of the Indian Air Force, Air Marshal Arora has managed the entire maintenance operations of the IAF fleet. His expertise lies in aerospace engineering, logistics, and life-cycle management of complex aviation assets.' },
+                { name: 'Mr. Anoop Kumar', title: 'Ex Board Member, Ministry of Railways', img: 'https://placehold.co/400x400/EFEFEF/333333?text=AK', profile: 'Bringing a unique perspective from the logistics and infrastructure domain, Mr. Kumar\'s experience with Indian Railways provides invaluable insights into dual-use technologies and national supply chain management.' },
+                { name: 'Mr Rajesh Srivastava', title: 'Defence & Technology Advisor', img: 'https://placehold.co/400x400/EFEFEF/333333?text=RS', profile: 'A seasoned advisor with deep knowledge of the defence technology landscape. Mr. Srivastava specializes in strategic planning, technology acquisition, and fostering collaborations between public and private sectors.' },
+                { name: 'MR Anil Joshi', title: 'E.D BHEL(Rtd.)', img: 'https://placehold.co/400x400/EFEFEF/333333?text=AJ', profile: 'An engineering stalwart from BHEL, Mr. Joshi has vast experience in heavy engineering and power systems, with applications in both civil and military domains, including naval propulsion systems.' },
+                { name: 'Mr Anil K Pandey', title: 'MD Jindal Power, Ex. Sr ED NTPC', img: 'https://placehold.co/400x400/EFEFEF/333333?text=AKP', profile: 'A leader in the energy sector, Mr. Pandey\'s expertise in managing large-scale power projects is crucial for developing advanced energy solutions and infrastructure for defence establishments.' },
+                { name: 'Dr Piyush Karia', title: 'NRI Based at U.S (Investor)', img: 'https://placehold.co/400x400/EFEFEF/333333?text=PK', profile: 'A strategic investor with a global perspective, Dr. Karia focuses on identifying and funding disruptive technologies. He acts as a bridge to international markets and cutting-edge innovations for the Indian defence ecosystem.' },
+                { name: 'Mr Sanjay k Agarwal', title: 'MD CBS', img: 'https://placehold.co/400x400/EFEFEF/333333?text=SKA', profile: 'An expert in corporate strategy and business solutions, Mr. Agarwal brings strong commercial acumen to the forum, helping translate technological innovations into viable, scalable defence products.' },
+                { name: 'Mr Anil Kumar', title: 'COO Jindal Steel & Power, Ex Railway, Ex G.E', img: 'https://placehold.co/400x400/EFEFEF/333333?text=AK2', profile: 'With a diverse background in steel, power, and logistics, Mr. Kumar excels in operational management of large industrial enterprises, a skill vital for defence manufacturing and infrastructure projects.' },
+                { name: 'Mr Pradyut Sen', title: 'Proprietor Ascentia Maven Solutions', img: 'https://placehold.co/400x400/EFEFEF/333333?text=PS', profile: 'A consultant specializing in technology solutions and business development. Mr. Sen helps startups and MSMEs in the defence sector navigate challenges and scale their operations effectively.' },
+                { name: 'Mr Ajay Yadav', title: 'Technology & Innovation Consultant', img: 'https://placehold.co/400x400/EFEFEF/333333?text=AY', profile: 'A consultant focused on fostering a culture of innovation. Mr. Yadav works on creating frameworks for R&D and technology transfer, connecting research institutions with industry partners.' },
+                { name: 'Mr Pankaj Garg', title: 'Financial & Strategic Advisor', img: 'https://placehold.co/400x400/EFEFEF/333333?text=PG', profile: 'With expertise in finance and strategic planning, Mr. Garg advises on project viability, funding, and long-term financial health for defence-related ventures, ensuring sustainable growth.' },
+                { name: 'Mr Amaresh', title: 'Aerospace & Defence Specialist', img: 'https://placehold.co/400x400/EFEFEF/333333?text=A', profile: 'A specialist with deep domain knowledge in aerospace and defence systems. Mr. Amaresh provides technical guidance on complex projects, from design and development to testing and certification.' },
+                { name: 'MR Rakesh Aghi', title: 'CEO, Cobra Carbide & Advanced Coating Technologies', img: 'https://placehold.co/400x400/EFEFEF/333333?text=RA', profile: 'An executive in advanced manufacturing, Mr. Aghi specializes in materials science and coating technologies that are critical for enhancing the performance and durability of defence equipment.' },
+                { name: 'Shri. P. Radha Krishna', title: 'Director (Production) & CMD (Addl. Charge) of BDL', img: 'https://placehold.co/400x400/EFEFEF/333333?text=PRK', profile: 'Leading one of India\'s premier defence PSUs, Shri. Radha Krishna is an expert in the production of guided missiles and strategic weapon systems, playing a key role in India\'s missile programs.' },
+                { name: 'Mr JBL Sundarshanam', title: 'Ex Missile Scientist DRDO', img: 'https://placehold.co/400x400/EFEFEF/333333?text=JBLS', profile: 'A former scientist from DRDO, Mr. Sundarshanam has been at the forefront of India\'s missile development programs. His scientific expertise provides a strong R&D foundation for the forum\'s initiatives.' }
+            ];
+
+            const expertsGrid = document.getElementById('experts-grid');
+            const modal = document.getElementById('expert-modal');
+            const modalContent = document.getElementById('modal-content');
+            const closeModal = document.getElementById('close-modal');
+            const expertInsightsBtn = document.getElementById('expert-insights-btn');
+            let currentExpert = null;
+
+            // Populate experts grid
+            experts.forEach(expert => {
+                const card = document.createElement('div');
+                card.className = 'bg-slate-100 rounded-lg shadow-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 cursor-pointer';
+                card.innerHTML = `
+                    <img src="${expert.img}" alt="${expert.name}" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-md">
+                    <h3 class="text-xl font-bold text-slate-800">${expert.name}</h3>
+                    <p class="text-orange-600 font-medium">${expert.title}</p>
+                `;
+                card.addEventListener('click', () => openModal(expert));
+                expertsGrid.appendChild(card);
+            });
+
+            // Modal functionality
+            function openModal(expert) {
+                currentExpert = expert;
+                document.getElementById('modal-img').src = expert.img;
+                document.getElementById('modal-name').textContent = expert.name;
+                document.getElementById('modal-title').textContent = expert.title;
+                document.getElementById('modal-profile').textContent = expert.profile;
+                
+                // Reset and hide AI insights section
+                document.getElementById('expert-insights-container').classList.add('hidden');
+                document.getElementById('expert-insights-content').innerHTML = '';
+                expertInsightsBtn.disabled = false;
+                expertInsightsBtn.innerHTML = '<span class="sparkle">✨</span> Generate AI Insights';
+
+
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95');
+                }, 10);
+            }
+
+            function closeExpertModal() {
+                modal.classList.add('opacity-0');
+                modalContent.classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    currentExpert = null;
+                }, 300);
+            }
+
+            closeModal.addEventListener('click', closeExpertModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeExpertModal();
+                }
+            });
+
+            // AI Features
+            const analyzeMissionBtn = document.getElementById('analyze-mission-btn');
+            const missionAnalysisContainer = document.getElementById('mission-analysis-container');
+            const missionAnalysisContent = document.getElementById('mission-analysis-content');
+            const missionImage = document.getElementById('mission-image');
+
+            expertInsightsBtn.addEventListener('click', handleExpertInsights);
+            analyzeMissionBtn.addEventListener('click', handleMissionAnalysis);
+
+            async function handleExpertInsights() {
+                if (!currentExpert) return;
+
+                expertInsightsBtn.disabled = true;
+                expertInsightsBtn.innerHTML = 'Generating...';
+                
+                const insightsContainer = document.getElementById('expert-insights-container');
+                const insightsContent = document.getElementById('expert-insights-content');
+                insightsContent.innerHTML = '<p>Analyzing profile...</p>';
+                insightsContainer.classList.remove('hidden');
+
+                try {
+                    const prompt = `Based on the following profile for an expert at Rudra Forum, an Indian defence NGO, generate 3-4 bullet points highlighting their potential strategic contributions. Focus on actionable insights. Profile:\nName: ${currentExpert.name}\nTitle: ${currentExpert.title}\nBio: ${currentExpert.profile}`;
+                    const response = await callGemini(prompt);
+                    insightsContent.innerHTML = formatResponse(response);
+                } catch (error) {
+                    insightsContent.innerHTML = '<p class="text-red-500">Could not generate insights at this time.</p>';
+                } finally {
+                    expertInsightsBtn.disabled = false;
+                    expertInsightsBtn.innerHTML = '<span class="sparkle">✨</span> Regenerate AI Insights';
+                }
+            }
+
+            async function handleMissionAnalysis() {
+                analyzeMissionBtn.disabled = true;
+                analyzeMissionBtn.innerHTML = 'Analyzing...';
+                
+                missionImage.classList.add('hidden');
+                missionAnalysisContainer.classList.remove('hidden');
+                missionAnalysisContent.innerHTML = '<p>Deconstructing mission...</p>';
+
+                try {
+                    const missionText = document.getElementById('mission-text').textContent;
+                    const prompt = `Analyze the following mission statement for Rudra Forum, an Indian defence NGO. Break it down into three sections: 1. Actionable Goals, 2. Potential Challenges, and 3. Key Focus Areas. Present the output in a clear, structured format. Mission: "${missionText}"`;
+                    const response = await callGemini(prompt);
+                    missionAnalysisContent.innerHTML = formatResponse(response);
+                } catch (error) {
+                    missionAnalysisContent.innerHTML = '<p class="text-red-500">Could not analyze the mission at this time.</p>';
+                } finally {
+                    analyzeMissionBtn.disabled = false;
+                    analyzeMissionBtn.innerHTML = '<span class="sparkle">✨</span> Re-analyze Mission';
+                }
+            }
+            
+            function formatResponse(text) {
+                return text.replace(/\*\s/g, '<li>') // Replace * with <li>
+                           .replace(/\n/g, '<br>')
+                           .replace(/<br><li>/g, '<li>')
+                           .replace(/(\*\*|__)(.*?)\1/g, '<strong>$2</strong>');
+            }
+
+
+            // Chatbot functionality
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+            const chatbotWindow = document.getElementById('chatbot-window');
+            const closeChatbot = document.getElementById('close-chatbot');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatInput = document.getElementById('chat-input');
+            const chatSend = document.getElementById('chat-send');
+
+            chatbotToggle.addEventListener('click', () => {
+                chatbotWindow.classList.toggle('hidden');
+                 setTimeout(() => {
+                    chatbotWindow.classList.toggle('opacity-0');
+                    chatbotWindow.classList.toggle('translate-y-4');
+                }, 10);
+            });
+            
+             closeChatbot.addEventListener('click', () => {
+                chatbotWindow.classList.add('opacity-0', 'translate-y-4');
+                 setTimeout(() => {
+                    chatbotWindow.classList.add('hidden');
+                }, 300);
+            });
+
+            chatSend.addEventListener('click', handleChat);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    handleChat();
+                }
+            });
+
+            async function handleChat() {
+                const userInput = chatInput.value.trim();
+                if (userInput === '') return;
+
+                appendMessage(userInput, 'user');
+                chatInput.value = '';
+                
+                appendMessage('Thinking...', 'bot', true); // Show loading indicator
+
+                try {
+                    const prompt = `You are a helpful AI assistant for Rudra Forum, an Indian NGO focused on the defence sector. Your name is Rudra AI. Be polite, concise, and informative. Answer questions about Rudra Forum's mission, its experts, and general topics about Indian defence. If you don't know an answer, say so politely. Do not make up information. User question: "${userInput}"`;
+                    const response = await callGemini(prompt);
+                    updateLastBotMessage(response);
+                } catch (error) {
+                    console.error("Error fetching from Gemini:", error);
+                    updateLastBotMessage("Sorry, I'm having trouble connecting. Please try again later.");
+                }
+            }
+
+            function appendMessage(text, sender, isLoading = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `flex mb-3 ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
+                
+                const messageBubble = document.createElement('div');
+                messageBubble.className = `rounded-lg p-2 max-w-xs ${sender === 'user' ? 'bg-orange-500 text-white' : 'bg-slate-200 text-slate-800'}`;
+                messageBubble.textContent = text;
+                
+                if (isLoading) {
+                    messageBubble.id = 'loading-bubble';
+                    messageBubble.innerHTML = `
+                        <div class="flex items-center space-x-1">
+                            <div class="w-2 h-2 bg-slate-500 rounded-full animate-pulse"></div>
+                            <div class="w-2 h-2 bg-slate-500 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+                            <div class="w-2 h-2 bg-slate-500 rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+                        </div>
+                    `;
+                }
+
+                messageDiv.appendChild(messageBubble);
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            function updateLastBotMessage(text) {
+                const loadingBubble = document.getElementById('loading-bubble');
+                if (loadingBubble) {
+                    loadingBubble.textContent = text;
+                    loadingBubble.removeAttribute('id');
+                }
+                 chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Centralized Gemini API Call Function
+            async function callGemini(prompt) {
+                const apiKey = ""; // API key is handled by the environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const payload = {
+                    contents: [{ role: "user", parts: [{ text: prompt }] }],
+                    generationConfig: {
+                        temperature: 0.6,
+                        topP: 1.0,
+                        maxOutputTokens: 300,
+                    }
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    const errorBody = await response.text();
+                    console.error("API Error Body:", errorBody);
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    return result.candidates[0].content.parts[0].text;
+                } else {
+                    console.warn("Unexpected API response structure:", result);
+                    if (result.promptFeedback && result.promptFeedback.blockReason) {
+                         return `I cannot answer that. Reason: ${result.promptFeedback.blockReason.toLowerCase().replace(/_/g, ' ')}.`;
+                    }
+                    return "I'm sorry, I couldn't generate a response. Please try a different question.";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
